@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class CarDoorsControl : MonoBehaviour
 {
+    public bool OpenAll;
     public bool DoorOpenL;
     public bool DoorOpenR;
     public bool EngineBayOpen;
     public bool FrontHoodOpen;
 
+    bool currentOpen = false;
     Animator animator;
 
     // Start is called before the first frame update
@@ -20,11 +22,19 @@ public class CarDoorsControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
+        if (currentOpen != OpenAll) // Becomes true
+        {
+            DoorOpenL = OpenAll;
+            DoorOpenR = OpenAll;
+            EngineBayOpen = OpenAll;
+            FrontHoodOpen = OpenAll;
+
+            currentOpen = OpenAll;
+        }
+
         animator.SetBool("DoorOpenL", DoorOpenL);
         animator.SetBool("DoorOpenR", DoorOpenR);
         animator.SetBool("EngineBayOpen", EngineBayOpen);
         animator.SetBool("FrontHoodOpen", FrontHoodOpen);
-        */
     }
 }
