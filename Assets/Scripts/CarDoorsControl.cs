@@ -9,6 +9,7 @@ public class CarDoorsControl : MonoBehaviour
     public bool DoorOpenR;
     public bool EngineBayOpen;
     public bool FrontHoodOpen;
+    public bool RearWingOpen;
 
     bool currentOpen = false;
     Animator animator;
@@ -28,6 +29,7 @@ public class CarDoorsControl : MonoBehaviour
             DoorOpenR = OpenAll;
             EngineBayOpen = OpenAll;
             FrontHoodOpen = OpenAll;
+            RearWingOpen = OpenAll;
 
             currentOpen = OpenAll;
         }
@@ -36,5 +38,6 @@ public class CarDoorsControl : MonoBehaviour
         animator.SetBool("DoorOpenR", DoorOpenR);
         animator.SetBool("EngineBayOpen", EngineBayOpen);
         animator.SetBool("FrontHoodOpen", FrontHoodOpen);
+        animator.SetBool("RearWingOpen", RearWingOpen);
     }
 }
