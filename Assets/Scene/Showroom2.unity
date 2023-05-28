@@ -860,7 +860,6 @@ MonoBehaviour:
   m_Script: {fileID: 1934463839}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Entries: []
 --- !u!4 &517003567
 Transform:
   m_ObjectHideFlags: 19
@@ -1410,7 +1409,6 @@ MonoBehaviour:
   m_Script: {fileID: 1357944747}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Entries: []
 --- !u!4 &797498267
 Transform:
   m_ObjectHideFlags: 19
@@ -1455,7 +1453,6 @@ MonoBehaviour:
   m_Script: {fileID: 2083664886}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Entries: []
 --- !u!4 &799798856
 Transform:
   m_ObjectHideFlags: 19
@@ -4490,7 +4487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9add54c069e4dd4d92575b5629cbc74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRotate: 1
+  isRotate: 0
   rotationSpeed: 2
 --- !u!115 &1934463839
 MonoScript:
@@ -4689,6 +4686,7 @@ MonoBehaviour:
   EngineBayOpen: 0
   FrontHoodOpen: 0
   RearWingOpen: 0
+  WiperActive: 0
 --- !u!1 &2095978439
 GameObject:
   m_ObjectHideFlags: 0

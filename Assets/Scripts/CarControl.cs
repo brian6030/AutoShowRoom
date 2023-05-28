@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CarDoorsControl : MonoBehaviour
+public class CarControl : MonoBehaviour
 {
     public bool OpenAll;
     public bool DoorOpenL;
@@ -10,6 +10,8 @@ public class CarDoorsControl : MonoBehaviour
     public bool EngineBayOpen;
     public bool FrontHoodOpen;
     public bool RearWingOpen;
+
+    public bool WiperActive;
 
     bool currentOpen = false;
     Animator animator;
@@ -39,5 +41,6 @@ public class CarDoorsControl : MonoBehaviour
         animator.SetBool("EngineBayOpen", EngineBayOpen);
         animator.SetBool("FrontHoodOpen", FrontHoodOpen);
         animator.SetBool("RearWingOpen", RearWingOpen);
+        animator.SetBool("Wiper", WiperActive);
     }
 }
