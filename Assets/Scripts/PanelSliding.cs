@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class PanelSliding : MonoBehaviour
 {
-    public Vector2 SlidingDirection;
+    public Vector2 SlidingDirection; // Relative movement (percentage of screen width and height)
     public KeyCode keyToPress;
     public bool IsShown = false;
 
-    Transform originalTransform;
+    Vector2 panelPosition;
+    RectTransform panelRectTransform;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        originalTransform = transform;
+        panelRectTransform = GetComponent<RectTransform>();
+        panelPosition = panelRectTransform.anchoredPosition;
 
         if (!IsShown) 
         {
-            transform.position = originalTransform.position + new Vector3(SlidingDirection.x, SlidingDirection.y, 0f);
-
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            HidePanel();
         }
     }
 
@@ -31,22 +31,32 @@ public class PanelSliding : MonoBehaviour
         {
             if (IsShown) // Hide panel
             {
-                transform.position = originalTransform.position + new Vector3(SlidingDirection.x, SlidingDirection.y, 0f);
-
-                Cursor.visible = false;
-                Cursor.lockState = CursorLockMode.Locked;
-
-                IsShown = false;
+                HidePanel();                
             }
             else // Show panel
             {
-                transform.position = originalTransform.position - new Vector3(SlidingDirection.x, SlidingDirection.y, 0f);
-                
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
-
-                IsShown = true;
+                ShowPanel();
             }
         }
+    }
+
+    void HidePanel() 
+    {
+        panelRectTransform.anchoredPosition = panelPosition + SlidingDirection;
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
+        IsShown = false;
+    }
+
+    void ShowPanel() 
+    {
+        panelRectTransform.anchoredPosition = panelPosition;
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
+        IsShown = true;
     }
 }
